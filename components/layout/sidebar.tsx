@@ -9,6 +9,7 @@ import {
   Newspaper,
   MessageSquare,
   Briefcase,
+  ClipboardList,
   Mail,
   LogOut,
 } from "lucide-react";
@@ -34,6 +35,11 @@ const navItems = [
     title: "Testimonials",
     href: "/dashboard/testimonials",
     icon: MessageSquare,
+  },
+  {
+    title: "Job Positions",
+    href: "/dashboard/job-positions",
+    icon: ClipboardList,
   },
   {
     title: "Job Applications",

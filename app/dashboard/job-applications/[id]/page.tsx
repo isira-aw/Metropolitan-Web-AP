@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { jobApplicationsApi } from "@/lib/api/job-applications";
 import { formatDateTime } from "@/lib/utils";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink, FileText } from "lucide-react";
 import Link from "next/link";
 
 export default function JobApplicationDetailPage({ params }: { params: { id: string } }) {
@@ -78,6 +78,32 @@ export default function JobApplicationDetailPage({ params }: { params: { id: str
             <h3 className="font-semibold text-sm mb-1">Cover Letter</h3>
             <p className="text-gray-700 whitespace-pre-wrap">{application.coverLetter}</p>
           </div>
+
+          {application.resumePdf && (
+            <div>
+              <h3 className="font-semibold text-sm mb-1">Resume / CV</h3>
+              <div className="mt-2 border rounded-lg overflow-hidden">
+                <div className="bg-gray-50 px-4 py-2 border-b flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
+                    <FileText className="h-4 w-4" />
+                    <span>Uploaded Resume (PDF)</span>
+                  </div>
+                  <a
+                    href={application.resumePdf}
+                    download="resume.pdf"
+                    className="text-primary text-sm hover:underline"
+                  >
+                    Download
+                  </a>
+                </div>
+                <iframe
+                  src={application.resumePdf}
+                  className="w-full h-[600px]"
+                  title="Resume PDF"
+                />
+              </div>
+            </div>
+          )}
 
           <div>
             <h3 className="font-semibold text-sm mb-1">Submitted</h3>
