@@ -105,7 +105,7 @@ export default function JobApplicationDetailPage({
         </div>
       )}
 
-      <div className="min-h-screen bg-gray-50/50 p-6 md:p-10">
+      <div className="min-h-screen bg-gray-50/50 p-4 lg:p-6 xl:p-10">
         {/* Back link */}
         <div className="mb-6">
           <Link href="/dashboard/job-applications">

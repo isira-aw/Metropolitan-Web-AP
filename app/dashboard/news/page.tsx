@@ -39,7 +39,7 @@ export default function NewsPage() {
   });
 
   return (
-    <div className="p-8">
+    <div className="p-4 lg:p-8">
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl font-bold">News Articles</h1>
         <Link href="/dashboard/news/new">

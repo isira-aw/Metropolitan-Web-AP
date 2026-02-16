@@ -29,7 +29,7 @@ export default function InquiryDetailPage({ params }: { params: { id: string } }
   }
 
   return (
-    <div className="p-6 sm:p-8 md:p-12 bg-gray-50 min-h-screen">
+    <div className="p-4 lg:p-6 xl:p-12 bg-gray-50 min-h-screen">
 
       {/* Back Button */}
       <div className="mb-6">

@@ -67,7 +67,7 @@ export default function EditNewsPage({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className="p-8">
+    <div className="p-4 lg:p-8">
       <div className="mb-6">
         <Link href="/dashboard/news">
           <Button variant="ghost" size="sm">

@@ -41,7 +41,7 @@ export default function NewNewsPage() {
   };
 
   return (
-    <div className="p-8">
+    <div className="p-4 lg:p-8">
       <div className="mb-6">
         <Link href="/dashboard/news">
           <Button variant="ghost" size="sm">

@@ -44,7 +44,7 @@ export default function NewCaseStudyPage() {
   };
 
   return (
-    <div className="p-8">
+    <div className="p-4 lg:p-8">
       <div className="mb-6">
         <Link href="/dashboard/case-studies">
           <Button variant="ghost" size="sm">
