@@ -25,7 +25,7 @@ export default function JobPositionsPage() {
     queryKey: ["job-positions", page, fromDate, toDate],
     queryFn: () => jobPositionsApi.getAll({
       page,
-      limit: 20,
+      limit: 10,
       fromDate: fromDate ? new Date(fromDate).toISOString() : undefined,
       toDate: toDate ? new Date(toDate).toISOString() : undefined,
     }),
