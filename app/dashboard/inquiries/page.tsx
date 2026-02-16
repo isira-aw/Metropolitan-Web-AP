@@ -24,7 +24,7 @@ export default function InquiriesPage() {
     queryKey: ["inquiries", page, fromDate, toDate],
     queryFn: () => inquiriesApi.getAll({
       page,
-      limit: 20,
+      limit: 10,
       fromDate: fromDate ? new Date(fromDate).toISOString() : undefined,
       toDate: toDate ? new Date(toDate).toISOString() : undefined,
     }),

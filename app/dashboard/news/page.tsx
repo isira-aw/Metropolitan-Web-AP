@@ -24,7 +24,7 @@ export default function NewsPage() {
     queryKey: ["news", page, fromDate, toDate],
     queryFn: () => newsApi.getAll({
       page,
-      limit: 20,
+      limit: 10,
       fromDate: fromDate ? new Date(fromDate).toISOString() : undefined,
       toDate: toDate ? new Date(toDate).toISOString() : undefined,
     }),

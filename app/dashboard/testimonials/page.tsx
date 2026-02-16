@@ -24,7 +24,7 @@ export default function TestimonialsPage() {
     queryKey: ["testimonials", page, fromDate, toDate],
     queryFn: () => testimonialsApi.getAll({
       page,
-      limit: 20,
+      limit: 10,
       fromDate: fromDate ? new Date(fromDate).toISOString() : undefined,
       toDate: toDate ? new Date(toDate).toISOString() : undefined,
     }),
