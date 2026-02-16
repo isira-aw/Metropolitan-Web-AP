@@ -25,6 +25,11 @@ const navItems = [
     href: "/dashboard",
     icon: LayoutDashboard,
   },
+    {
+    title: "—— Update section ——",
+    href: "#",
+    icon: ArrowBigDownIcon,
+  },
   {
     title: "Case Studies",
     href: "/dashboard/case-studies",
@@ -46,8 +51,8 @@ const navItems = [
     icon: ClipboardList,
   },
     {
-    title: " ",
-    href: "/dashboard",
+    title: "—— Inbox section ——",
+    href: "#",
     icon: ArrowBigDownIcon,
   },
   {
