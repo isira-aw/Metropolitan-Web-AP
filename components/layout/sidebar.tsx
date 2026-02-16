@@ -12,6 +12,7 @@ import {
   ClipboardList,
   Mail,
   LogOut,
+  ArrowBigDownIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -40,6 +41,11 @@ const navItems = [
     title: "Job Positions",
     href: "/dashboard/job-positions",
     icon: ClipboardList,
+  },
+    {
+    title: " ",
+    href: "/dashboard",
+    icon: ArrowBigDownIcon,
   },
   {
     title: "Job Applications",

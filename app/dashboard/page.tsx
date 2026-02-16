@@ -80,30 +80,6 @@ export default function DashboardPage() {
           );
         })}
       </div>
-
-      <Card className="mt-8">
-        <CardHeader>
-          <CardTitle>Quick Start Guide</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h3 className="font-semibold text-sm mb-2">Content Management</h3>
-            <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-              <li>Create, edit, and delete case studies, news articles, and testimonials</li>
-              <li>Upload images as Base64 (no external storage needed)</li>
-              <li>Filter content by date range and division</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold text-sm mb-2">Form Submissions</h3>
-            <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-              <li>View and delete job applications from candidates</li>
-              <li>Manage contact form inquiries from website visitors</li>
-              <li>Filter submissions by date range</li>
-            </ul>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }
