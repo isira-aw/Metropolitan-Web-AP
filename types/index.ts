@@ -77,7 +77,28 @@ export interface JobApplication {
   position: string;
   portfolioUrl: string;
   coverLetter: string;
+  resumePdf: string;
   createdAt: string;
+}
+
+export interface JobPosition {
+  id: number;
+  title: string;
+  detail: string;
+  category: string;
+  information: string;
+  status: string;
+  image: string;
+  createdAt: string;
+}
+
+export interface JobPositionFormData {
+  title: string;
+  detail: string;
+  category: string;
+  information: string;
+  status: string;
+  image: string;
 }
 
 // Pagination Types
