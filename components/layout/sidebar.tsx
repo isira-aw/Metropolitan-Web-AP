@@ -12,59 +12,29 @@ import {
   ClipboardList,
   Mail,
   LogOut,
-  ArrowBigDownIcon,
   Menu,
   X,
+  Bot,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
-const navItems = [
-  {
-    title: "Dashboard",
-    href: "/dashboard",
-    icon: LayoutDashboard,
-  },
-    {
-    title: "—— Update section ——",
-    href: "#",
-    icon: ArrowBigDownIcon,
-  },
-  {
-    title: "Case Studies",
-    href: "/dashboard/case-studies",
-    icon: FileText,
-  },
-  {
-    title: "News",
-    href: "/dashboard/news",
-    icon: Newspaper,
-  },
-  {
-    title: "Testimonials",
-    href: "/dashboard/testimonials",
-    icon: MessageSquare,
-  },
-  {
-    title: "Job Positions",
-    href: "/dashboard/job-positions",
-    icon: ClipboardList,
-  },
-    {
-    title: "—— Inbox section ——",
-    href: "#",
-    icon: ArrowBigDownIcon,
-  },
-  {
-    title: "Job Applications",
-    href: "/dashboard/job-applications",
-    icon: Briefcase,
-  },
-  {
-    title: "Inquiries",
-    href: "/dashboard/inquiries",
-    icon: Mail,
-  },
+type NavLink = { type: "link"; title: string; href: string; icon: React.ComponentType<{ className?: string }> };
+type NavSection = { type: "section"; label: string };
+type NavItem = NavLink | NavSection;
+
+const navItems: NavItem[] = [
+  { type: "link", title: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+  { type: "section", label: "Content" },
+  { type: "link", title: "Case Studies", href: "/dashboard/case-studies", icon: FileText },
+  { type: "link", title: "News", href: "/dashboard/news", icon: Newspaper },
+  { type: "link", title: "Testimonials", href: "/dashboard/testimonials", icon: MessageSquare },
+  { type: "link", title: "Job Positions", href: "/dashboard/job-positions", icon: ClipboardList },
+  { type: "section", label: "Inbox" },
+  { type: "link", title: "Job Applications", href: "/dashboard/job-applications", icon: Briefcase },
+  { type: "link", title: "Inquiries", href: "/dashboard/inquiries", icon: Mail },
+  { type: "section", label: "Chatbot" },
+  { type: "link", title: "Knowledge Base", href: "/dashboard/chatbot", icon: Bot },
 ];
 
 export function Sidebar() {
@@ -111,10 +81,22 @@ export function Sidebar() {
         <div className="flex h-16 items-center border-b border-gray-800 px-6 lg:h-16">
           <h1 className="text-xl font-bold lg:block hidden">Metropolitan Admin</h1>
         </div>
+
         <nav className="flex-1 space-y-1 px-3 py-4">
-          {navItems.map((item) => {
+          {navItems.map((item, index) => {
+            if (item.type === "section") {
+              return (
+                <p
+                  key={`section-${index}`}
+                  className="px-3 pt-4 pb-1 text-xs font-semibold uppercase tracking-wider text-gray-500"
+                >
+                  {item.label}
+                </p>
+              );
+            }
+
             const Icon = item.icon;
-            const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
+            const isActive = pathname === item.href || (item.href !== "/dashboard" && pathname.startsWith(item.href + "/"));
 
             return (
               <Link
@@ -134,6 +116,7 @@ export function Sidebar() {
             );
           })}
         </nav>
+
         <div className="border-t border-gray-800 p-4">
           <Button
             variant="ghost"
@@ -148,7 +131,7 @@ export function Sidebar() {
 
       {/* Overlay for mobile */}
       {isMobileMenuOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 z-30 lg:hidden"
           onClick={() => setIsMobileMenuOpen(false)}
         />
