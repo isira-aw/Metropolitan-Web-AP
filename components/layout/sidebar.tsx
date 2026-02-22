@@ -15,6 +15,7 @@ import {
   ArrowBigDownIcon,
   Menu,
   X,
+  Bot,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -64,6 +65,16 @@ const navItems = [
     title: "Inquiries",
     href: "/dashboard/inquiries",
     icon: Mail,
+  },
+  {
+    title: "—— Chatbot ——",
+    href: "#",
+    icon: ArrowBigDownIcon,
+  },
+  {
+    title: "Knowledge Base",
+    href: "/dashboard/chatbot",
+    icon: Bot,
   },
 ];
 
