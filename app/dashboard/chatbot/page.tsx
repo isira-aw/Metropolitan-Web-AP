@@ -140,16 +140,12 @@ export default function ChatbotKnowledgeBasePage() {
   );
 
   return (
-    <div className="p-6 max-w-5xl mx-auto">
+    <div className="p-4 lg:p-8">
       {/* Page header */}
       <div className="flex items-center justify-between mb-6">
-        <div className="flex items-center gap-3">
-          <MessageSquareText className="w-7 h-7 text-blue-600" />
+        <div className=" gap-3">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">Chatbot Knowledge Base</h1>
-            <p className="text-sm text-gray-500 mt-0.5">
-              Manage Q&amp;A pairs that the chatbot uses to answer customer questions.
-            </p>
+            <h1 className="text-3xl font-bold">Job Applications</h1>
           </div>
         </div>
         <button
