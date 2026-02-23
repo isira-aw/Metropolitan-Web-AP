@@ -29,7 +29,20 @@ apiClient.interceptors.request.use(
 apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 401) {
+    // Check for JWT-related errors (including signature mismatch)
+    const isJwtError = 
+      error.response?.status === 401 || 
+      error.response?.status === 403 || 
+      (error.response?.data?.message && 
+        (error.response.data.message.includes("JWT") || 
+         error.response.data.message.includes("token") || 
+         error.response.data.message.includes("signature"))) ||
+      (error.message && 
+        (error.message.includes("JWT") || 
+         error.message.includes("token") || 
+         error.message.includes("signature")));
+
+    if (isJwtError) {
       if (typeof window !== "undefined") {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
