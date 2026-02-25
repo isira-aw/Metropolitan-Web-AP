@@ -27,7 +27,7 @@ A modern, responsive admin panel built with Next.js 14 for managing the Metropol
 ### Prerequisites
 
 - Node.js 18+ installed
-- Backend server running on `http://localhost:5000`
+- Backend server running on `http://localhost:8080`
 
 ### Installation
 
